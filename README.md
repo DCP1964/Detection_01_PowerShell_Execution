@@ -31,7 +31,7 @@ index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 | stats count by EventCode
 
 ```
-![Sysmon Events](screenshots/detection1/sysmon_event_distribution.png)
+![Sysmon Events](screenshots/sysmon_event_distribution.png)
 
 ---
 
@@ -41,7 +41,7 @@ index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 | head 5
 ```
-![Raw Logs](screenshots/detection1/raw_sysmon_events.png)
+![Raw Logs](screenshots/raw_sysmon_events.png)
 
 ---
 
@@ -57,7 +57,7 @@ index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 | table _time EventCode Image CommandLine ParentImage
 ```
 
-![Field Extraction](screenshots/detection1/field_extraction.png)
+![Field Extraction](screenshots/field_extraction.png)
 
 ---
 
@@ -75,7 +75,7 @@ index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 | table _time Image
 ```
 
-![PowerShell Filter](screenshots/detection1/powershell_filter.png)
+![PowerShell Filter](screenshots/powershell_filter.png)
 
 ---
 
@@ -92,7 +92,7 @@ index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 | table _time Computer User Image CommandLine ParentImage
 ```
 
-![Attack Detection](screenshots/detection1/attack_detection.png)
+![Attack Detection](screenshots/attack_detection.png)
 
 ---
 
@@ -114,7 +114,7 @@ index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 
 ```
 
-![Final Detection](screenshots/detection1/final_detection_output.png)
+![Final Detection](screenshots/final_detection_output.png)
 
 ---
 
@@ -127,7 +127,7 @@ index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
 | table _raw
 ```
 
-![Raw XML](screenshots/detection1/raw_xml_event.png)
+![Raw XML](screenshots//raw_xml_event.png)
 
 
 
