@@ -1,0 +1,14 @@
+```spl
+index=main sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational"
+| rex "<EventID>(?<EventCode>\d+)</EventID>"
+| rex "<Data Name='Image'>(?<Image>[^<]+)</Data>"
+| rex "<Data Name='CommandLine'>(?<CommandLine>[^<]*)</Data>"
+| rex "<Data Name='ParentImage'>(?<ParentImage>[^<]+)</Data>"
+| rex "<Data Name='User'>(?<User>[^<]*)</Data>"
+| rex "<Data Name='Computer'>(?<Computer>[^<]*)</Data>"
+| search EventCode=1 Image="*powershell*" NOT Image="*splunk*"
+| search CommandLine="*enc*" OR CommandLine="*IEX*" OR CommandLine="*DownloadString*" OR CommandLine="*ExecutionPolicy*"
+| fillnull value="unknown" Computer User
+| stats count values(CommandLine) as commands values(ParentImage) as parent_process by Computer, User
+
+```
