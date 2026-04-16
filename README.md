@@ -226,3 +226,8 @@ Successfully detected multiple simulated attack scenarios involving PowerShell a
 - Integrate Script Block Logging (Event ID 4104)
 - Detect obfuscated PowerShell payloads
 - Correlate with network-based indicators
+
+## Related Detections
+
+- Detection 01 — PowerShell Execution Detection  
+- Detection 02 — PowerShell Script Block Logging  
